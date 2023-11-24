@@ -20,7 +20,7 @@ export class OrderItem {
   @Exclude()
   @CreateDateColumn({
     name: 'created_at',
-    type: 'time', //timestamptz-->postgres
+    type: 'timestamptz', //timestamptz-->postgres
     default: () => 'CURRENT_TIMESTAMP',
   })
   createdAt: Date;
@@ -28,7 +28,7 @@ export class OrderItem {
   @Exclude()
   @UpdateDateColumn({
     name: 'updated_at',
-    type: 'time',
+    type: 'timestamptz',
     default: () => 'CURRENT_TIMESTAMP',
   })
   updatedAt: Date;
