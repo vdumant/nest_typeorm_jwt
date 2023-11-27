@@ -17,7 +17,7 @@ import {
 import { Response } from 'express';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
-import { ParseIntPipe } from '../../common/parse-int.pipe';
+import { ParseIntPipe } from '@common/parse-int.pipe';
 import {
   CreateProductDto,
   UpdateProductDto,
@@ -25,11 +25,11 @@ import {
 } from '../dtos/products.dtos';
 
 import { ProductsService } from './../services/products.service';
-import { JwtAuthGuard } from './../../auth/guards/jwt-auth.guard';
-import { RolesGuard } from './../../auth/guards/roles.guard';
-import { Public } from './../../auth/decorators/public.decorator';
-import { Roles } from './../../auth/decorators/roles.decorator';
-import { Role } from './../../auth/models/roles.model';
+import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
+import { RolesGuard } from '@auth/guards/roles.guard';
+import { Public } from '@auth/decorators/public.decorator';
+import { Roles } from '@auth/decorators/roles.decorator';
+import { Role } from '@auth/models/roles.model';
 
 @UseGuards(JwtAuthGuard, RolesGuard)
 @ApiTags('products')

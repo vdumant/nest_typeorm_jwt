@@ -11,7 +11,7 @@ export class AuthService {
   constructor(
     private usersService: UsersService,
     private jwtService: JwtService,
-  ) {}
+  ) { }
 
   async validateUser(email: string, password: string) {
     const user = await this.usersService.findByEmail(email);
@@ -30,5 +30,10 @@ export class AuthService {
       access_token: this.jwtService.sign(payload),
       user,
     };
+  }
+
+  async getUser(userId: number) {
+    const user = await this.usersService.findOne(userId);
+    return user;
   }
 }

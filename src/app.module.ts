@@ -10,7 +10,7 @@ import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
 import { DatabaseModule } from './database/database.module';
 import { enviroments } from 'enviroments';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from '@auth/auth.module';
 import config from './config';
 
 @Module({
